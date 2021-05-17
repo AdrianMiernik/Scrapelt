@@ -41,9 +41,14 @@ public class DocumentController {
     }
 
     @GetMapping("/get/{id}")
-    public Document getFile(@PathVariable Long id) {
-        return documentService.getFile(id)
+    public DocumentDTO getFile(@PathVariable Long id) {
+        Document document = documentService.getFile(id)
                 .orElseThrow(() -> new FileNotFoundException("File not found - id: " + id));
+        return DocumentDTO.builder()
+                .fileName(document.getName())
+                .createdAt(document.getUploadTime())
+                .build();
+
     }
 
         @GetMapping("/download/{id}")
