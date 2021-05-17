@@ -51,12 +51,12 @@ public class DocumentController {
 
     }
 
-        @GetMapping("/download/{id}")
-        public ResponseEntity<Resource> downloadFile (@PathVariable Long id){
-            Document document = documentService.downloadFile(id);
-            return ResponseEntity.ok()
-                    .contentType(MediaType.parseMediaType(document.getType()))
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; name= " + document.getName())
-                    .body(new ByteArrayResource(document.getContent()));
-        }
+    @GetMapping("/download/{id}")
+    public ResponseEntity<Resource> downloadFile(@PathVariable Long id) {
+        Document document = documentService.downloadFile(id);
+        return ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType(document.getType()))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; name= " + document.getName())
+                .body(new ByteArrayResource(document.getContent()));
     }
+}

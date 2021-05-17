@@ -5,11 +5,11 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="documents")
+@Table(name = "documents")
 public class Document {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 256, nullable = false, unique = true)
@@ -17,14 +17,15 @@ public class Document {
 
     private String type;
 
-    @Column(name="upload_time")
+    @Column(name = "upload_time")
     private Date uploadTime;
 
     @Lob
     private byte[] content;
 
 
-    public Document() {}
+    public Document() {
+    }
 
     public Document(String name, String type, Date uploadTime, byte[] content) {
         this.name = name;

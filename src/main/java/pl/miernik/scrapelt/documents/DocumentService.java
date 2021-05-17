@@ -20,7 +20,7 @@ public class DocumentService {
             document.setType(multipartfile.getContentType());
             document.setUploadTime(new Date());
             document.setContent(multipartfile.getBytes());
-           return documentRepository.save(document);
+            return documentRepository.save(document);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
