@@ -6,14 +6,16 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import pl.miernik.scrapelt.dto.DocumentDTO;
+import pl.miernik.scrapelt.dto.DocumentListDTO;
+import pl.miernik.scrapelt.dto.DocumentUploadDTO;
 import pl.miernik.scrapelt.exception.FileNotFoundException;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/file")
 public class DocumentController {
 
@@ -35,9 +37,10 @@ public class DocumentController {
         return response;
     }
 
+
     @GetMapping("/list")
-    public List<Document> getList() {
-        return documentService.getListOfFiles();
+    public List<DocumentListDTO> getList() {
+        return documentService.getList();
     }
 
     @GetMapping("/get/{id}")
@@ -45,6 +48,7 @@ public class DocumentController {
         Document document = documentService.getFile(id)
                 .orElseThrow(() -> new FileNotFoundException("File not found - id: " + id));
         return DocumentDTO.builder()
+                .fileId(document.getId())
                 .fileName(document.getName())
                 .createdAt(document.getUploadTime())
                 .build();
