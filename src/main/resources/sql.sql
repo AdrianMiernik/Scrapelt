@@ -6,6 +6,8 @@ DESCRIBE documents;
 
 SELECT * FROM documents;
 
+SELECT id, name FROM documents;
+
 
 
 
