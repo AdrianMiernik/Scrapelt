@@ -22,7 +22,7 @@
 ### Add object: method „POST” 
 POSTMAN passes the file to database. Persist it’s name, add unique 'id' and some metadata.<br>
 http://localhost:8080/file/upload<br>
-Headers: Key=”file”<br> Value=”TXChiropractor.txt”<br>
+Body:<br> Key=”file”<br> Value=”TXChiropractor.txt”<br>
 Successfull request get response: 'status 200' with below informaton:
 ````json
 [{
