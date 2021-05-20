@@ -6,7 +6,7 @@
 * [App Testing](#app-testing)
 
 ## Description
->The application is a new feature of web scraping project. It’s major functionality is upload the files to database, getting information about the object in JSON format and download the file if necessary.
+>The application is a new feature of web scraping project. It’s major functionality is uploading the files to database, getting information about the object in JSON format and download the file if required.
 
 ## Technogy Stack
 * Java
@@ -20,7 +20,7 @@
 ## Application Testing
 
 ### Add object: method „POST” 
-POSTMAN passes the file to database. Persist it’s name, add unique id and some metadata. 
+POSTMAN passes the file to database. Persist it’s name, add unique 'id' and some metadata.<br>
 http://localhost:8080/file/upload<br>
 Headers: Key=”file”<br> Value=”TXChiropractor.txt”<br>
 Successfull request get response: 'status 200' with below informaton:
@@ -58,6 +58,7 @@ JSON:
 ### Display object per id: method „GET” 
 http://localhost:8080/file/get/4<br>
 Returns information about chosen file in JSON format.
+Successfull request get response: 'status 200'.
 
 JSON:
 ````json
