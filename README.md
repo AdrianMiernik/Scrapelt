@@ -26,10 +26,10 @@ Headers: Key=”file”<br> Value=”TXChiropractor.txt”<br>
 Successfull request get response: 'status 200' with below informaton:
 ````json
 [{
-"id": 4,
-"fileType": "text/plain",
-"message": "File has been uploaded successfully!",
-"uploadStatus": true
+	"id": 4,
+	"fileType": "text/plain",
+	"message": "File has been uploaded successfully!",
+	"uploadStatus": true
 }]
 ````
 
@@ -54,3 +54,21 @@ JSON:
 	"name": "TXChiropractor.txt"
 }]
 ````
+
+### Display object per id: method „GET” 
+http://localhost:8080/file/get/4<br>
+Returns information about chosen file in JSON format.
+
+JSON:
+````json
+[{
+	"fileId": 4,
+	"fileName": "TXChiropractor.txt",
+	"createdAt": "2021-05-20T23:39:50.000+00:00"
+}]
+````
+
+### Download the file by id: method „GET”
+http://localhost:8080/file/download/1<br>
+http://localhost:8080/file/download/4<br>
+Returns the file in txt, jpg etc.
