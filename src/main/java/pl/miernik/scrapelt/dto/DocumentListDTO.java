@@ -1,4 +1,4 @@
-package pl.miernik.scrapelt.documents;
+package pl.miernik.scrapelt.dto;
 
 import lombok.Builder;
 
