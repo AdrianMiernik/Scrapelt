@@ -6,29 +6,29 @@ import lombok.Builder;
 
 public class DocumentListDTO {
 
-    private Long fileId;
-    private String fileName;
+    private Long id;
+    private String name;
 
-    public DocumentListDTO(Long fileId, String fileName) {
-        this.fileId = fileId;
-        this.fileName = fileName;
+    public DocumentListDTO(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Long getFileId() {
-        return fileId;
+    public Long getId() {
+        return id;
     }
 
-    public DocumentListDTO setFileId(Long fileId) {
-        this.fileId = fileId;
+    public DocumentListDTO setId(Long id) {
+        this.id = id;
         return this;
     }
 
-    public String getFileName() {
-        return fileName;
+    public String getName() {
+        return name;
     }
 
-    public DocumentListDTO setFileName(String fileName) {
-        this.fileName = fileName;
+    public DocumentListDTO setName(String name) {
+        this.name = name;
         return this;
     }
 }
