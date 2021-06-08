@@ -6,7 +6,7 @@
 * [App Testing](#app-testing)
 
 ## Description
->The application is a new feature of web scraping project. It’s major functionality is uploading the files to database, getting information about the object in JSON format and download the file if required.
+>The application is a new feature of web scraping project. Its major functionality is uploading the files into database, getting information about the object in JSON format and download the file if required.
 
 ## Technogy Stack
 * Java
